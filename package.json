@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-fatec",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @portfolio/web",
+    "dev:api": "npm run dev -w @portfolio/api",
+    "build": "npm run build -w @portfolio/web",
+    "preview": "npm run preview -w @portfolio/web"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

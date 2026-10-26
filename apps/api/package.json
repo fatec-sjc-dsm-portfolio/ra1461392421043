@@ -1,0 +1,31 @@
+{
+  "name": "@portfolio/api",
+  "version": "1.0.0",
+  "description": "Portfolio data and REST API (Express + TypeScript)",
+  "main": "api/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node api/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only api/index.ts"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "portfolio"
+  ],
+  "author": "Fábio Hiroshi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}
