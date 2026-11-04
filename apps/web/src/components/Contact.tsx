@@ -85,7 +85,7 @@ export function Contact() {
             <div className="links-row">
               <a className="btn primary" href={asset(t.cv.file)} download={t.cv.download}>{t.cv.label}<Icon name="arrow-down" /></a>
               <a className="btn" href="https://github.com/FabioHiros" target="_blank" rel="noopener noreferrer"><Icon name="github" />GitHub</a>
-              <a className="btn" href="https://www.linkedin.com/in/f%C3%A1bio-hiroshi-5393a51a0/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" />LinkedIn</a>
+              <a className="btn" href="https://www.linkedin.com/in/fabio-hiroshid/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" />LinkedIn</a>
               <Link className="btn" to="/cursoPython">{t.contact.course}<Icon name="arrow-right" /></Link>
             </div>
           </div>
