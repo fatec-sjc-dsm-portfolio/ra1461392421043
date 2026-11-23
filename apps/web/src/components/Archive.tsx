@@ -5,7 +5,7 @@ import { Mark } from './Mark';
 import { Icon } from './Icon';
 import { asset } from '../asset';
 
-export type Category = 'all' | Project['category'];
+export type Category = 'all' | 'api' | Project['category'];
 export interface TechFilter { key: string; name: string }
 type View = 'list' | 'grid';
 
@@ -25,7 +25,10 @@ function excerpt(p: Project, max = 150) {
   return text.slice(0, text.lastIndexOf(' ', max)) + '…';
 }
 
-const CATEGORIES: Category[] = ['all', 'professional', 'academic', 'personal'];
+const CATEGORIES: Category[] = ['all', 'api', 'professional', 'academic', 'personal'];
+/** FATEC API projects, one per semester: GreenTech, ProStock, NectoPoint, SkyTrack, Themis */
+const API_IDS = new Set(['2', '3', '7', '9', '11']);
+const inCategory = (p: Project, c: Category) => c === 'all' || (c === 'api' ? API_IDS.has(p.id) : p.category === c);
 const VIEW_KEY = 'archiveView';
 
 function initialView(): View {
@@ -63,7 +66,7 @@ export function Archive({
   };
 
   const list = projects
-    .filter((p) => (category === 'all' || p.category === category) && (!tech || usesTech(p, tech.key)))
+    .filter((p) => inCategory(p, category) && (!tech || usesTech(p, tech.key)))
     .sort((a, b) => b.semester.localeCompare(a.semester) || Number(b.id) - Number(a.id));
   const present = new Set(projects.map((p) => p.category));
   const name = (p: Project) => p.shortTitle || p.title.split(' - ')[0];
@@ -88,7 +91,7 @@ export function Archive({
             ))}
           </div>
           <div className="filters" role="group" aria-label={t.archive.filterLabel}>
-            {CATEGORIES.filter((c) => c === 'all' || present.has(c)).map((c) => (
+            {CATEGORIES.filter((c) => c === 'all' || c === 'api' || present.has(c)).map((c) => (
               <button key={c} className="flt" type="button" aria-pressed={category === c} onClick={() => onCategory(c)}>
                 {t.archive.filters[c]}
               </button>

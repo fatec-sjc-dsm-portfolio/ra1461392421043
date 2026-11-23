@@ -64,7 +64,7 @@ const pt = {
   archive: {
     title: 'Todos os projetos',
     views: { label: 'Visualização', list: 'Lista', grid: 'Grade' },
-    filters: { all: 'Todos', professional: 'Profissionais', academic: 'Acadêmicos', personal: 'Pessoais' },
+    filters: { all: 'Todos', api: 'API', professional: 'Profissionais', academic: 'Acadêmicos', personal: 'Pessoais' },
     filterLabel: 'Filtrar projetos',
     removeTech: 'Remover filtro de tecnologia',
     inProgress: 'EM PROGRESSO',
@@ -175,7 +175,7 @@ const en: Strings = {
   archive: {
     title: 'All projects',
     views: { label: 'View', list: 'List', grid: 'Grid' },
-    filters: { all: 'All', professional: 'Professional', academic: 'Academic', personal: 'Personal' },
+    filters: { all: 'All', api: 'API', professional: 'Professional', academic: 'Academic', personal: 'Personal' },
     filterLabel: 'Filter projects',
     removeTech: 'Remove technology filter',
     inProgress: 'IN PROGRESS',
